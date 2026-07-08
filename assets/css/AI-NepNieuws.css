@@ -1,378 +1,378 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-body {
-    background: #eef2f5;
-    font-family: system-ui, 'Segoe UI', 'Inter', 'Helvetica Neue', sans-serif;
-    padding: 2rem 1.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Grid, maar nu alleen de eerste pagina prominent */
-.main-home {
-    max-width: 1100px;
-    width: 100%;
-    background: white;
-    border-radius: 2rem;
-    box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.25);
-    overflow: hidden;
-    transition: all 0.2s;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.main-home.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* BLAUWE HERO BANNER */
-.hero-banner {
-    max-width: 1100px;
-    width: 100%;
-    margin-bottom: 2rem;
-    background: linear-gradient(135deg, #0b3b5f, #1e6f9f, #2c9cd4);
-    border-radius: 2rem;
-    padding: 3rem 2rem;
-    color: white;
-    text-align: center;
-    box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s;
-    opacity: 0;
-    transform: translateY(30px);
-}
-
-.hero-banner.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.hero-banner h1 {
-    font-size: 2.5rem;
-    font-weight: 800;
-    margin-bottom: 0.75rem;
-    letter-spacing: -0.02em;
-}
-
-.hero-banner p {
-    font-size: 1.1rem;
-    max-width: 700px;
-    margin: 0 auto;
-    opacity: 0.9;
-}
-
-.hero-banner .hero-sub {
-    margin-top: 1.2rem;
-    font-size: 0.9rem;
-    background: rgba(255,255,255,0.2);
-    display: inline-block;
-    padding: 0.3rem 1rem;
-    border-radius: 60px;
-    backdrop-filter: blur(4px);
-}
-
-/* Header: logo + web page name + navigatie */
-.screen-header {
-    padding: 1.8rem 2rem 0.8rem 2rem;
-    border-bottom: 1px solid #e9edf2;
-    background: white;
-}
-
-.logo-row {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-bottom: 0.75rem;
-}
-
-.logo {
-    font-weight: 800;
-    font-size: 1.7rem;
-    letter-spacing: -0.3px;
-    background: linear-gradient(135deg, #1f2b3c, #2c3e50);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.logo::before {
-    content: "🤖";
-    background: none;
-    -webkit-background-clip: unset;
-    background-clip: unset;
-    color: #e67e22;
-    font-size: 1.8rem;
-}
-
-.webpage-name {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #2c5a7a;
-    background: #eef2fa;
-    padding: 0.3rem 1rem;
-    border-radius: 40px;
-    letter-spacing: -0.2px;
-}
-
-/* navigatie - interactief */
-.nav-links {
-    display: flex;
-    gap: 2rem;
-    margin-top: 1rem;
-    border-top: 1px solid #edf2f7;
-    padding-top: 0.9rem;
-}
-
-.nav-item {
-    font-weight: 600;
-    font-size: 1.05rem;
-    color: #4a627a;
-    cursor: pointer;
-    position: relative;
-    padding-bottom: 0.3rem;
-    background: none;
-    border: none;
-    font-family: inherit;
-    transition: color 0.2s;
-}
-
-.nav-item:hover {
-    color: #e67e22;
-}
-
-.nav-item.active {
-    color: #c4450c;
-}
-
-.nav-item.active::after {
-    content: '';
-    position: absolute;
-    bottom: -0.9rem;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: #e67e22;
-    border-radius: 3px;
-}
-
-/* hoofdinhoud */
-.card-content {
-    padding: 2rem 2rem 2.5rem;
-}
-
-.page-title {
-    font-size: 2.2rem;
-    font-weight: 800;
-    letter-spacing: -0.5px;
-    background: linear-gradient(120deg, #c4450c, #e67e22);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    margin-bottom: 1rem;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.page-title.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.section-title {
-    font-weight: 700;
-    font-size: 1.4rem;
-    color: #1e293b;
-    border-left: 5px solid #e67e22;
-    padding-left: 1rem;
-    margin: 1.5rem 0 0.8rem 0;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.section-title.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.text-block {
-    background: #fefaf5;
-    padding: 1.2rem 1.5rem;
-    border-radius: 1.5rem;
-    color: #2c3e50;
-    line-height: 1.5;
-    font-size: 1rem;
-    border: 1px solid #ffe6d5;
-    margin-bottom: 1rem;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.text-block.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* AI NIEUWS KAARTEN (nepnieuws) */
-.fake-news-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    margin-top: 1rem;
-}
-
-.news-card {
-    background: white;
-    border-radius: 1.5rem;
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
-    border: 1px solid #f0e2d4;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    opacity: 0;
-    transform: translateY(20px);
-}
-
-.news-card.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.news-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-}
-
-.news-header {
-    background: #fff6ef;
-    padding: 1rem 1.5rem;
-    border-bottom: 1px dashed #f3d9c6;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.ai-badge {
-    background: #f4b94230;
-    color: #b45f1b;
-    font-size: 0.7rem;
-    font-weight: 700;
-    padding: 0.25rem 0.8rem;
-    border-radius: 30px;
-    backdrop-filter: blur(2px);
-}
-
-.news-title {
-    font-size: 1.3rem;
-    font-weight: 800;
-    color: #a33f00;
-    margin: 0;
-}
-
-.news-body {
-    padding: 1.2rem 1.5rem 1.5rem;
-}
-
-.news-meta {
-    display: flex;
-    gap: 1rem;
-    font-size: 0.75rem;
-    color: #8b6b4f;
-    margin-bottom: 0.8rem;
-    font-weight: 500;
-}
-
-.news-text {
-    margin-bottom: 1rem;
-    line-height: 1.5;
-}
-
-.fake-alert {
-    background: #ffefe5;
-    border-radius: 40px;
-    padding: 0.4rem 1rem;
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: #c2410c;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.disclaimer {
-    margin-top: 2rem;
-    background: #f1f5f9;
-    padding: 1rem 1.5rem;
-    border-radius: 1rem;
-    font-size: 0.85rem;
-    border-left: 4px solid #e67e22;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.disclaimer.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
-.refresh-btn {
-    background: #f1ede8;
-    border-radius: 60px;
-    padding: 0.5rem 1.2rem;
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: #a35117;
-    transition: 0.1s;
-    margin-top: 0.5rem;
-    border: 1px solid #eedbcb;
-}
-
-.refresh-btn:hover {
-    background: #e67e22;
-    color: white;
-}
-
-hr {
-    margin: 1rem 0;
-    border: 0;
-    height: 1px;
-    background: linear-gradient(90deg, #f0dccc, transparent);
-}
-
-@media (max-width: 700px) {
     body {
-    padding: 1rem;
+      background: #eef2f5;
+      font-family: system-ui, 'Segoe UI', 'Inter', 'Helvetica Neue', sans-serif;
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
-    .card-content {
-    padding: 1.5rem;
+
+    /* Grid, maar nu alleen de eerste pagina prominent */
+    .main-home {
+      max-width: 1100px;
+      width: 100%;
+      background: white;
+      border-radius: 2rem;
+      box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.25);
+      overflow: hidden;
+      transition: all 0.2s;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
     }
-    .page-title {
-    font-size: 1.8rem;
+
+    .main-home.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
-    .hero-banner h1 {
-    font-size: 1.8rem;
-    }
+
+    /* BLAUWE HERO BANNER */
     .hero-banner {
-    padding: 2rem 1.2rem;
+      max-width: 1100px;
+      width: 100%;
+      margin-bottom: 2rem;
+      background: linear-gradient(135deg, #0b3b5f, #1e6f9f, #2c9cd4);
+      border-radius: 2rem;
+      padding: 3rem 2rem;
+      color: white;
+      text-align: center;
+      box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s;
+      opacity: 0;
+      transform: translateY(30px);
     }
-}
+
+    .hero-banner.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hero-banner h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-banner p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+
+    .hero-banner .hero-sub {
+      margin-top: 1.2rem;
+      font-size: 0.9rem;
+      background: rgba(255,255,255,0.2);
+      display: inline-block;
+      padding: 0.3rem 1rem;
+      border-radius: 60px;
+      backdrop-filter: blur(4px);
+    }
+
+    /* Header: logo + web page name + navigatie */
+    .screen-header {
+      padding: 1.8rem 2rem 0.8rem 2rem;
+      border-bottom: 1px solid #e9edf2;
+      background: white;
+    }
+
+    .logo-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 0.75rem;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 1.7rem;
+      letter-spacing: -0.3px;
+      background: linear-gradient(135deg, #1f2b3c, #2c3e50);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logo::before {
+      content: "🤖";
+      background: none;
+      -webkit-background-clip: unset;
+      background-clip: unset;
+      color: #e67e22;
+      font-size: 1.8rem;
+    }
+
+    .webpage-name {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #2c5a7a;
+      background: #eef2fa;
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      letter-spacing: -0.2px;
+    }
+
+    /* navigatie - interactief */
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      margin-top: 1rem;
+      border-top: 1px solid #edf2f7;
+      padding-top: 0.9rem;
+    }
+
+    .nav-item {
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: #4a627a;
+      cursor: pointer;
+      position: relative;
+      padding-bottom: 0.3rem;
+      background: none;
+      border: none;
+      font-family: inherit;
+      transition: color 0.2s;
+    }
+
+    .nav-item:hover {
+      color: #e67e22;
+    }
+
+    .nav-item.active {
+      color: #c4450c;
+    }
+
+    .nav-item.active::after {
+      content: '';
+      position: absolute;
+      bottom: -0.9rem;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: #e67e22;
+      border-radius: 3px;
+    }
+
+    /* hoofdinhoud */
+    .card-content {
+      padding: 2rem 2rem 2.5rem;
+    }
+
+    .page-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      background: linear-gradient(120deg, #c4450c, #e67e22);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 1rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .page-title.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section-title {
+      font-weight: 700;
+      font-size: 1.4rem;
+      color: #1e293b;
+      border-left: 5px solid #e67e22;
+      padding-left: 1rem;
+      margin: 1.5rem 0 0.8rem 0;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .section-title.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .text-block {
+      background: #fefaf5;
+      padding: 1.2rem 1.5rem;
+      border-radius: 1.5rem;
+      color: #2c3e50;
+      line-height: 1.5;
+      font-size: 1rem;
+      border: 1px solid #ffe6d5;
+      margin-bottom: 1rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .text-block.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* AI NIEUWS KAARTEN (nepnieuws) */
+    .fake-news-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .news-card {
+      background: white;
+      border-radius: 1.5rem;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
+      border: 1px solid #f0e2d4;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .news-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .news-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .news-header {
+      background: #fff6ef;
+      padding: 1rem 1.5rem;
+      border-bottom: 1px dashed #f3d9c6;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .ai-badge {
+      background: #f4b94230;
+      color: #b45f1b;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.25rem 0.8rem;
+      border-radius: 30px;
+      backdrop-filter: blur(2px);
+    }
+
+    .news-title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #a33f00;
+      margin: 0;
+    }
+
+    .news-body {
+      padding: 1.2rem 1.5rem 1.5rem;
+    }
+
+    .news-meta {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.75rem;
+      color: #8b6b4f;
+      margin-bottom: 0.8rem;
+      font-weight: 500;
+    }
+
+    .news-text {
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    .fake-alert {
+      background: #ffefe5;
+      border-radius: 40px;
+      padding: 0.4rem 1rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #c2410c;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .disclaimer {
+      margin-top: 2rem;
+      background: #f1f5f9;
+      padding: 1rem 1.5rem;
+      border-radius: 1rem;
+      font-size: 0.85rem;
+      border-left: 4px solid #e67e22;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .disclaimer.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    button {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .refresh-btn {
+      background: #f1ede8;
+      border-radius: 60px;
+      padding: 0.5rem 1.2rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #a35117;
+      transition: 0.1s;
+      margin-top: 0.5rem;
+      border: 1px solid #eedbcb;
+    }
+
+    .refresh-btn:hover {
+      background: #e67e22;
+      color: white;
+    }
+
+    hr {
+      margin: 1rem 0;
+      border: 0;
+      height: 1px;
+      background: linear-gradient(90deg, #f0dccc, transparent);
+    }
+
+    @media (max-width: 700px) {
+      body {
+        padding: 1rem;
+      }
+      .card-content {
+        padding: 1.5rem;
+      }
+      .page-title {
+        font-size: 1.8rem;
+      }
+      .hero-banner h1 {
+        font-size: 1.8rem;
+      }
+      .hero-banner {
+        padding: 2rem 1.2rem;
+      }
+    }

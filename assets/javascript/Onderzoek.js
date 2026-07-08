@@ -1,4 +1,4 @@
-  // Scroll Observer voor fade-in animaties
+// Scroll Observer voor fade-in animaties
   const fadeObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
